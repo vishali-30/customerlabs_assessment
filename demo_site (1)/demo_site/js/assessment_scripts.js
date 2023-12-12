@@ -1,7 +1,7 @@
 let track_order = setInterval(function(){
     if (((window.CLabsgbVar || {}).generalProps || {}).uid) {
         let event_name = "purchase_products";
-        let prperties = {
+        let properties = {
             "product_properties" : [{
                 "product_name": {
                     "t": "string",
@@ -43,7 +43,7 @@ let track_order = setInterval(function(){
                 }
             }
         }
-        _cl.trackClick(event_name, prperties);
+        _cl.trackClick(event_name, properties);
         clearInterval(track_order);
     }
    
@@ -120,7 +120,7 @@ document.querySelector("button.btn btn-black btn-lg py-3 btn-block").addEventLis
 
 let cart_viewed = setInterval(function() {
     if (((window.CLabsgbVar || {}).generalProps || {}).uid) {
-        let event_name = "cart_page_viewed";
+        let event_name = "cart_page_view";
         let properties = {
             "customProperties": {
                 "page_url": {
@@ -145,8 +145,8 @@ let cart_viewed = setInterval(function() {
 let track_cart2 = setInterval(function() {
     if (((window.CLabsgbVar || {}).generalProps || {}).uid) {
 
-        let pdt_name = document.getElementsByClassName("h3.product-title").value;
-        let pdt_price = document.getElementsByClassName("strong.product-price").value;        
+        let prod_name = document.getElementsByClassName(".product-title").value;
+        let prod_price = document.getElementsByClassName(".product-price").value;        
 
         let event_name = "add_to_cart";
         let properties = {
@@ -185,8 +185,8 @@ document.querySelector("span.icon-cross").addEventListener("click", track_cart2)
 let track_cart = setInterval(function() {
     if (((window.CLabsgbVar || {}).generalProps || {}).uid) {
 
-        let pdt_name_s = document.getElementsByClassName("h3.product-title").value;
-        let pdt_price_s = document.getElementsByClassName("strong.product-price").value;
+        let prod_name = document.getElementsByClassName(".product-title").value;
+        let prod_price = document.getElementsByClassName(".product-price").value;
 
         let event_name = "cart";
         let properties = {
